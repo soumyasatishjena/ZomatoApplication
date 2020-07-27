@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.HomeActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            android:id="@+id/topBarHome"
+            layout="@layout/home_top_bar"/>
+        <ImageView
+            android:id="@+id/imageLocation"
+            android:layout_below="@id/topBarHome"
+            style="@style/ImageAtHomeBar"
+            android:layout_marginStart="@dimen/fifteen_dp"
+            android:layout_marginLeft="@dimen/fifteen_dp"
+            android:layout_marginTop="@dimen/ten_dp"
+            android:src="@drawable/ic_placeholder"
+            tools:ignore="ContentDescription" />
+        <TextView
+            android:id="@+id/textLocationName"
+            android:layout_below="@id/topBarHome"
+            android:layout_toEndOf="@id/imageLocation"
+            style="@style/TextHeadingByCategory"
+            android:fontFamily="@font/lato_bold_italic"
+            android:layout_marginTop="@dimen/thirteen_dp"
+            android:layout_marginStart="@dimen/one_point_five_dp"
+            android:textSize="@dimen/text_fifteen_sp"
+            android:text="Location Name"
+            android:textColor="@color/lighterBlack"
+            tools:ignore="HardcodedText"
+            android:layout_toRightOf="@id/imageLocation"
+            android:layout_marginLeft="@dimen/one_point_five_dp" />
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefresh"
+            android:layout_below="@+id/imageLocation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/ten_dp">
+            <androidx.core.widget.NestedScrollView
+                android:visibility="gone"
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ten_dp"
+                android:layout_marginBottom="@dimen/ten_dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/two_hundred_dp"
+                        android:layout_marginTop="@dimen/twelve_dp"
+                        android:layout_marginBottom="@dimen/five_dp"
+                        android:overScrollMode="never"
+                        android:clipToPadding="false" />
+                    <LinearLayout
+                        android:id="@+id/layoutDots"
+                        android:layout_below="@id/viewPager"
+                        style="@style/ViewPagerDots"/>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewCategory"
+                        style="@style/RecyclerView"
+                        android:layout_below="@id/layoutDots"
+                        android:layout_marginTop="@dimen/five_dp"
+                        android:layout_height="@dimen/fifty_five_dp"
+                        tools:listitem="@layout/adapter_cuisine_layout"/>
+                    <View
+                        android:layout_below="@id/recyclerViewCategory"
+                        android:id="@+id/viewLineCategory"
+                        style="@style/ViewStartLine"/>
+                    <TextView
+                        android:id="@+id/textRestaurant"
+                        android:layout_below="@id/recyclerViewCategory"
+                        android:layout_toEndOf="@id/viewLineCategory"
+                        style="@style/TextHeadingByCategory"
+                        android:text="Restaurant In Your Locality"
+                        tools:ignore="HardcodedText"
+                        android:layout_toRightOf="@id/viewLineCategory" />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewRestaurant"
+                        android:layout_below="@+id/textRestaurant"
+                        style="@style/RecyclerViewWithMargin"
+                        android:nestedScrollingEnabled="false"
+                        tools:targetApi="lollipop" />
+                </RelativeLayout>
+            </androidx.core.widget.NestedScrollView>
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/textError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:textSize="@dimen/text_eighteen_sp"
+                android:textColor="@color/colorAccent"
+                android:layout_margin="@dimen/twenty_dp"
+                android:text="@string/internetError"
+                android:gravity="center_horizontal" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="RestaurantData"
+            type="com.example.zomatoapplication.pojo.DisplayList" />
+    </data>
+    <FrameLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/eight_dp"
+        android:layout_height="@dimen/two_twenty_dp">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardMain"
+            android:layout_width="match_parent"
+            android:layout_gravity="bottom"
+            android:layout_height="@dimen/one_eighty_dp"
+            android:layout_marginTop="@dimen/five_dp"
+            android:layout_marginStart="@dimen/five_dp"
+            android:layout_marginEnd="@dimen/five_dp"
+            android:layout_marginBottom="@dimen/fifteen_dp"
+            app:cardCornerRadius="@dimen/sixteen_dp"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardElevation="@dimen/three_dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <View
+                    android:layout_width="@dimen/fifteen_dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightBlue"/>
+                <TextView
+                    android:id="@+id/textAvailable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not Available Now"
+                    android:background="@color/colorAccent"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/text_ten_sp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:paddingTop="@dimen/three_dp"
+                    android:paddingBottom="@dimen/three_dp"
+                    android:paddingRight="@dimen/ten_dp"
+                    android:paddingLeft="@dimen/ten_dp"
+                    android:paddingStart="@dimen/ten_dp"
+                    android:paddingEnd="@dimen/ten_dp"
+                    tools:ignore="HardcodedText" />
+                <TextView
+                    android:id="@+id/textName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="false"
+                    android:layout_marginStart="@dimen/one_fifty_five_dp"
+                    android:layout_marginEnd="@dimen/twenty_dp"
+                    android:layout_marginTop="@dimen/twenty_five_dp"
+                    android:maxLines="2"
+                    style="@style/TextViewStoryNameDisplay"
+                    android:text="@{RestaurantData.restaurantName}"
+                    tools:ignore="HardcodedText"
+                    android:layout_marginLeft="@dimen/one_fifty_five_dp"
+                    android:layout_marginRight="@dimen/twenty_dp" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="@dimen/ninety_dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textName"
+                    android:layout_marginStart="@dimen/one_fifty_five_dp"
+                    android:layout_marginLeft="@dimen/one_fifty_five_dp"
+                    android:layout_marginTop="@dimen/four_dp"
+                    android:layout_marginEnd="@dimen/five_dp"
+                    android:layout_marginRight="@dimen/five_dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:padding="@dimen/four_dp"
+                    android:rating="@{Float.valueOf(RestaurantData.restaurantAverageRating)}"
+                    android:stepSize="0.1"
+                    android:theme="@style/RatingBar" />
+                <TextView
+                    android:id="@+id/textRating"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@id/textName"
+                    android:layout_toEndOf="@id/ratingBar"
+                    android:layout_marginTop="@dimen/eight_dp"
+                    android:layout_marginStart="@dimen/two_dp"
+                    android:textSize="@dimen/text_twelve_sp"
+                    android:textColor="@color/rateActive"
+                    android:singleLine="true"
+                    android:text="@{RestaurantData.restaurantRatingText}"
+                    android:fontFamily="@font/aclonica"
+                    tools:ignore="HardcodedText"
+                    android:layout_marginLeft="@dimen/two_dp"
+                    android:layout_toRightOf="@id/ratingBar" />
+                <TextView
+                    android:layout_alignParentTop="true"
+                    android:id="@+id/textRatingViewNum"
+                    android:layout_below="@id/ratingBar"
+                    style="@style/TextViewDisplaySmallDescription"
+                    android:text="@{RestaurantData.votes}"
+                    android:layout_marginTop="@dimen/five_dp"
+                    android:textColor="@color/rateNormal"
+                    tools:ignore="HardcodedText"
+                    android:layout_marginStart="@dimen/one_fifty_dp"
+                    android:layout_marginLeft="@dimen/one_fifty_dp" />
+
+                <TextView
+                    android:id="@+id/textCuisine"
+                    style="@style/TextViewDisplaySmallDescription"
+                    android:layout_above="@id/textAddress"
+                    android:layout_width="match_parent"
+                    android:layout_toStartOf="@id/textOrder"
+                    android:layout_marginStart="@dimen/twenty_two_dp"
+                    android:layout_marginLeft="@dimen/twenty_two_dp"
+                    android:layout_marginEnd="@dimen/ten_dp"
+                    android:layout_marginRight="@dimen/ten_dp"
+                    android:layout_marginBottom="@dimen/three_dp"
+                    android:layout_marginTop="@dimen/four_dp"
+                    android:text="@{RestaurantData.restaurantCuisine}"
+                    android:textColor="@color/lightBlue"
+                    android:textSize="@dimen/text_twelve_sp"
+                    tools:ignore="HardcodedText"
+                    android:layout_toLeftOf="@id/textOrder" />
+
+                <TextView
+                    android:id="@+id/textCost"
+                    android:layout_below="@id/ratingBar"
+                    android:layout_marginTop="@dimen/two_dp"
+                    android:layout_marginStart="@dimen/one_fifty_five_dp"
+                    style="@style/TextViewDisplaySmallDescription"
+                    android:text="@{RestaurantData.restaurantAverageCost}"
+                    android:textColor="@color/lighterBlack"
+                    android:textSize="@dimen/text_twelve_sp"
+                    tools:ignore="HardcodedText"
+                    android:layout_marginLeft="@dimen/one_fifty_five_dp" />
+                <TextView
+                    android:id="@+id/textOrder"
+                    android:layout_alignParentEnd="true"
+                    android:layout_above="@id/textAddress"
+                    android:layout_marginBottom="@dimen/five_dp"
+                    android:layout_marginEnd="@dimen/ten_dp"
+                    style="@style/TeatBrowseShapeButton"
+                    tools:ignore="RelativeOverlap"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/twelve_dp" />
+                <TextView
+                    android:id="@+id/textAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/thirty_five_dp"
+                    android:background="@color/lightGreen"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/text_twelve_sp"
+                    android:text="@{RestaurantData.restaurantAddress}"
+                    android:fontFamily="@font/lato_regular"
+                    android:paddingTop="@dimen/ten_dp"
+                    android:paddingBottom="@dimen/five_dp"
+                    android:paddingStart="@dimen/fifteen_dp"
+                    android:paddingLeft="@dimen/fifteen_dp"
+                    android:paddingEnd="@dimen/fifteen_dp"
+                    android:paddingRight="@dimen/fifteen_dp"
+                    android:maxLines="1"
+                    android:layout_alignParentBottom="true"
+                    tools:ignore="HardcodedText" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardTopImage"
+            android:layout_width="@dimen/one_thirty_dp"
+            android:layout_height="@dimen/one_forty_dp"
+            android:layout_marginStart="@dimen/twenty_two_dp"
+            android:layout_marginTop="@dimen/seven_dp"
+            app:cardElevation="@dimen/ten_dp"
+            app:cardCornerRadius="@dimen/ten_dp"
+            android:layout_marginLeft="@dimen/twenty_two_dp">
+            <ImageView
+                android:id="@+id/imageHotel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/ImageThumbnail"
+
+                tools:ignore="ContentDescription" />
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+</layout>

@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Zomato Application</string>
+    <string name="splash_screen_name">Zomato \n Food \n Delivery</string>
+    <string name="serverError">Server Error !! \n Please try after some time..</string>
+    <string name="internetError">"No Internet Available !!! \n Please check your connection."</string>
+    <string name="permission_request">Permission Request</string>
+    <string name="permission">Places Project needs permission to access device location to provide required services. Please allow the permission</string>
+    <string name="grant">Grant Permission</string>
+    <string name="denied">Permission Denied</string>
+    <string name="message">Permission to access device location is permanently denied. you need to go to setting to allow the permission.</string>
+    <string name="permission_denied">Permission Denied</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="food_delivery">Food Delivery</string>
+    <string name="promo_heading_one">Eat Healthy Stay Healthy</string>
+    <string name="promo_heading_two">Stay Safe Stay At Home</string>
+    <string name="promo_heading_three">Order Online Eat Together</string>
+    <string name="promo_desc_one">Eat fresh by ordering from Here..</string>
+    <string name="promo_desc_two">Hygienic food to keep you healthy..</string>
+    <string name="promo_desc_three">Stay at home without moving out..</string>
+    <string name="promo_desc_four">Enjoy good food during these lockDown..</string>
+    <string name="promo_desc_five">Order Here at your finger tip..</string>
+    <string name="promo_desc_six">Have dine outside fun inside your house now..</string>
+</resources>

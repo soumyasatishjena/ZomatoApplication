@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/seventy_dp">
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_top_semi_circle" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/homeUserDp"
+        android:layout_width="@dimen/forty_five_dp"
+        android:layout_height="@dimen/forty_five_dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_brand_icon"
+        android:layout_marginStart="@dimen/fifteen_dp"
+        android:layout_marginLeft="@dimen/fifteen_dp" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textHomeHeading"
+        android:layout_toEndOf="@id/homeUserDp"
+        android:layout_toStartOf="@id/homeSearchImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/five_dp"
+        android:layout_marginEnd="@dimen/ten_dp"
+        android:layout_centerVertical="true"
+        android:text="@string/food_delivery"
+        android:textSize="@dimen/text_twenty_five_sp"
+        android:textColor="@color/colorAccent"
+        android:fontFamily="@font/lato_black"
+        android:layout_toRightOf="@id/homeUserDp"
+        android:layout_toLeftOf="@id/homeSearchImage"
+        android:layout_marginLeft="@dimen/five_dp"
+        android:layout_marginRight="@dimen/ten_dp" />
+    <ImageView
+        android:id="@+id/homeSearchImage"
+        android:layout_toStartOf="@id/homeNotificationImage"
+        style="@style/ImageAtHomeBar"
+        android:src="@drawable/ic_search"
+        tools:ignore="ContentDescription"
+        android:layout_toLeftOf="@id/homeNotificationImage" />
+
+    <ImageView
+        android:id="@+id/homeNotificationImage"
+        style="@style/ImageAtHomeBar"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_notification"
+        tools:ignore="ContentDescription"
+        android:layout_alignParentRight="true" />
+
+</RelativeLayout>
+</layout>
